@@ -3,11 +3,11 @@ Smart Assistant helps the end-user to communicate with desktop computer using vo
 The proposed assistant has the capability to work with or without internet connectivity. 
 
 MODULES USED
-Google speech API
-PYTHON
-Pyauto GUI
-Speech recognition
-OS module
+Google speech API,
+PYTHON,
+Pyauto GUI,
+Speech recognition,
+OS module,
 Winshell
 
 IDE USED
