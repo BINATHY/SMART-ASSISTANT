@@ -21,6 +21,64 @@ from newsapi import NewsApiClient
 from win10toast import ToastNotifier
 import wolframalpha
 import oxforddictionaries
+import tkinter as tk
+from tkinter import ttk
+import yfinance as yf
+import pandas as pd
+import matplotlib.pyplot as plt
+import io
+import base64
+
+class PCAssistantGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("PC Assistant")
+
+        # Create a notebook to organize different functionalities
+        self.notebook = ttk.Notebook(root)
+
+        # Page 1: Smart Assistant
+        self.page1 = ttk.Frame(self.notebook)
+        self.create_smart_assistant_page()
+
+        # Add pages to the notebook
+        self.notebook.add(self.page1, text="Smart Assistant")
+        self.notebook.pack(expand=1, fill="both")
+
+    def create_smart_assistant_page(self):
+        # Create widgets for the Smart Assistant page
+        label = ttk.Label(self.page1, text="PC Assistant", font=("Helvetica", 16))
+        label.pack(pady=10)
+
+        button_open_app = ttk.Button(self.page1, text="Open Application", command=self.open_application)
+        button_open_app.pack(pady=10)
+
+        button_control_notif = ttk.Button(self.page1, text="Control Notifications", command=self.control_notifications)
+        button_control_notif.pack(pady=10)
+
+        # Add more buttons or widgets as needed
+
+    def open_application(self):
+        # Implement the functionality to open applications
+        # Example: Open a web browser
+        import webbrowser
+        webbrowser.open("https://www.example.com")
+
+    def control_notifications(self):
+        # Implement the functionality to control notifications
+        # Example: Display a notification
+        from tkinter import messagebox
+        messagebox.showinfo("Notification", "This is a notification!")
+
+if __name__ == "__main__":
+    # Create a new Tkinter window
+    root_tkinter = tk.Tk()
+
+    # Create an instance of PCAssistantGUI and pass the Tkinter window
+    app = PCAssistantGUI(root_tkinter)
+
+    # Start the Tkinter event loop
+    root_tkinter.mainloop()
 
 # Invoking SAPI [Microsoft Speech API]
 speak = wincl.Dispatch("SAPI.SpVoice")
